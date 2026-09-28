@@ -1612,3 +1612,131 @@ footer {
     }
 
 }
+/* ========================================
+   OCEANOGRAPHIC TOOLS
+======================================== */
+
+.tools-intro {
+    max-width: 720px;
+    margin-bottom: 48px;
+}
+
+.tools-intro p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.tool-category {
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 30px;
+}
+
+.tool-category-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding-bottom: 24px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.tool-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.tool-category-header h3 {
+    margin: 0 0 5px;
+    font-size: 19px;
+    color: var(--text);
+}
+
+.tool-category-header p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.tool-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.tool-item:last-child {
+    border-bottom: none;
+}
+
+.tool-item h4 {
+    margin: 0 0 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.tool-item p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.tool-item > span {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 6px 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .tool-category {
+        padding: 22px;
+    }
+
+    .tool-category-header {
+        gap: 14px;
+    }
+
+    .tool-item {
+        align-items: flex-start;
+    }
+
+    .tool-item > span {
+        display: none;
+    }
+}
