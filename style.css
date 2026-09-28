@@ -435,130 +435,117 @@ a {
    PROFILE
 ========================================= */
 
+/* =========================================
+   PROFILE CARD
+========================================= */
+
 .hero-profile {
+    width: 100%;
+    max-width: 420px;
+    margin-left: auto;
 
-    min-height: 430px;
+    background: #ffffff;
 
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    background: var(--surface);
-
-    border:
-        1px solid var(--border);
-
+    border: 1px solid #e4e7ec;
     border-radius: 10px;
 
     overflow: hidden;
 
+    box-shadow: 0 12px 35px rgba(16, 24, 40, 0.06);
 }
 
 
+/* PHOTO */
+
 .profile-image {
-    height: 310px;
+    width: 100%;
+    height: 390px;
+
     overflow: hidden;
+
     background: #f1f5ff;
 }
 
 .profile-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+
     display: block;
+
+    object-fit: cover;
+
+    /*
+     * Keeps the face near the upper part
+     * of the card instead of cropping it away.
+     */
+    object-position: center 18%;
 }
 
 
-.profile-initials {
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size: 78px;
-
-    font-weight: 800;
-
-    letter-spacing: -.08em;
-
-    color: var(--blue);
-
-}
-
+/* INFORMATION */
 
 .profile-info {
+    padding: 30px;
 
-    padding: 28px;
-
+    background: #ffffff;
 }
-
 
 .profile-label {
+    display: block;
 
-    color: var(--blue);
+    color: #2457c5;
 
     font-size: 10px;
-
     font-weight: 700;
 
-    letter-spacing: .12em;
-
+    letter-spacing: 0.12em;
 }
-
 
 .profile-info h3 {
-
-    margin-top: 10px;
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
-    font-size: 23px;
-
-    line-height: 1.2;
-
-    letter-spacing: -.035em;
-
-}
-
-
-.profile-info p {
-
     margin-top: 12px;
 
-    color: var(--muted);
+    color: #101828;
 
-    font-size: 13px;
+    font-family: "Manrope", sans-serif;
 
+    font-size: 24px;
+    line-height: 1.25;
+
+    letter-spacing: -0.035em;
+}
+
+.profile-info p {
+    margin-top: 14px;
+
+    color: #667085;
+
+    font-size: 14px;
     line-height: 1.7;
-
 }
 
 
-.profile-footer {
+/* CARD FOOTER */
 
+.profile-footer {
     display: flex;
 
+    align-items: center;
     justify-content: space-between;
 
-    padding:
-        17px 28px;
+    padding: 17px 30px;
 
-    border-top:
-        1px solid var(--border);
+    background: #ffffff;
 
-    color: var(--light);
+    border-top: 1px solid #e4e7ec;
+
+    color: #98a2b3;
 
     font-size: 10px;
+    font-weight: 600;
 
     text-transform: uppercase;
 
-    letter-spacing: .08em;
-
+    letter-spacing: 0.08em;
 }
 
 
