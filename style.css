@@ -6,25 +6,15 @@
 ========================================= */
 
 :root {
-
-    --background: #ffffff;
-
-    --surface: #f6f8fb;
-
-    --text: #101828;
-
-    --muted: #667085;
-
-    --light: #98a2b3;
-
-    --border: #e4e7ec;
-
-    --blue: #2457c5;
-
-    --blue-light: #eef4ff;
-
-    --container: 1180px;
-
+  --primary: #123B3A;
+  --accent: #287C72;
+  --accent-light: #DDECE4;
+  --background: #F7F8F2;
+  --surface: #FFFFFF;
+  --text: #263A36;
+  --text-muted: #687B74;
+  --border: #DCE5DF;
+  --earth-accent: #C69B5B;
 }
 
 
