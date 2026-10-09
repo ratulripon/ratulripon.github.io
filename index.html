@@ -1,1568 +1,1826 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+  <title>MD Ratul Hasan Ripon | Oceanography & Environmental Research</title>
+  <meta name="description" content="Academic portfolio of MD Ratul Hasan Ripon, an oceanography graduate interested in environmental science, GIS, remote sensing, coastal research, and sustainability.">
+  <meta name="author" content="MD Ratul Hasan Ripon">
+  <meta name="theme-color" content="#123B3A">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <meta property="og:title" content="MD Ratul Hasan Ripon | Research Portfolio">
+  <meta property="og:description" content="Explore my academic background, environmental research, GIS projects, and experience in oceanography.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ratulripon.github.io/">
+  <meta property="og:image" content="https://ratulripon.github.io/assets/profile.jpg">
 
-    <title>MD. Ratul Hasan Ripon | Oceanography & Data Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <meta
-        name="description"
-        content="Academic and professional portfolio of MD. Ratul Hasan Ripon, an Oceanography graduate with experience in research, GIS, data analysis, remote sensing and geospatial analysis."
-    >
+  <style>
+    :root {
+      --primary: #123B3A;
+      --accent: #287C72;
+      --accent-dark: #1D655C;
+      --accent-light: #DDECE4;
+      --background: #F7F8F2;
+      --surface: #FFFFFF;
+      --text: #263A36;
+      --muted: #687B74;
+      --border: #DCE5DF;
+      --earth: #C69B5B;
+      --shadow: 0 12px 35px rgba(18, 59, 58, 0.07);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
 
-    <link rel="stylesheet" href="style.css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Manrope", sans-serif;
+      color: var(--primary);
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      letter-spacing: -0.055em;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 3vw, 2.65rem);
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin-bottom: 14px;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--primary);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-white {
+      background: var(--surface);
+    }
+
+    .section-heading {
+      max-width: 690px;
+      margin-bottom: 38px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent-dark);
+      font-size: 0.77rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 0.88rem;
+    }
+
+    /* Navigation */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 248, 242, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(220, 229, 223, 0.85);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+    }
+
+    .nav-links a {
+      font-size: 0.87rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      border-radius: 10px;
+      padding: 7px 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 20px;
+      border: 1px solid var(--accent);
+      border-radius: 9px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      color: #fff;
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      color: var(--primary);
+      background: transparent;
+      border-color: var(--border);
+    }
+
+    .button-outline:hover {
+      color: var(--primary);
+      background: var(--accent-light);
+      border-color: var(--accent-light);
+    }
+
+    .button-small {
+      padding: 9px 14px;
+      font-size: 0.85rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 85px 0 64px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 7% 20%, rgba(221, 236, 228, 0.65), transparent 32%),
+        var(--background);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 76px;
+    }
+
+    .hero .eyebrow {
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      max-width: 690px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 620px;
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin-bottom: 27px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 27px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-meta span::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--earth);
+    }
+
+    .hero-visual {
+      position: relative;
+      max-width: 390px;
+      justify-self: end;
+      width: 100%;
+    }
+
+    .hero-photo-frame {
+      position: relative;
+      padding: 12px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      transform: rotate(1.5deg);
+    }
+
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 17px;
+      background: var(--accent-light);
+    }
+
+    .photo-label {
+      position: absolute;
+      bottom: 30px;
+      left: -28px;
+      max-width: 245px;
+      padding: 14px 18px;
+      border-radius: 13px;
+      background: var(--primary);
+      color: #fff;
+      box-shadow: var(--shadow);
+      transform: rotate(-1.5deg);
+    }
+
+    .photo-label strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .photo-label span {
+      font-size: 0.79rem;
+      color: #DDECE4;
+    }
+
+    /* Research interests */
+
+    .interest-strip {
+      background: var(--primary);
+      color: #fff;
+      padding: 23px 0;
+    }
+
+    .interest-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+    }
+
+    .interest-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.91rem;
+      font-weight: 600;
+    }
+
+    .interest-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #A7D6C1;
+      flex-shrink: 0;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+    }
+
+    .about-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .focus-card {
+      background: var(--accent-light);
+      border: 1px solid #D1E4D8;
+      border-radius: var(--radius);
+      padding: 27px;
+    }
+
+    .focus-card h3 {
+      margin-bottom: 18px;
+    }
+
+    .focus-list {
+      list-style: none;
+    }
+
+    .focus-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(18, 59, 58, 0.12);
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+    }
+
+    .focus-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .focus-list li::before {
+      content: "↗";
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    /* Research project */
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .project-visual {
+      min-height: 350px;
+      position: relative;
+      background: #DDECE4;
+      overflow: hidden;
+    }
+
+    .project-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      object-fit: cover;
+    }
+
+    .project-copy {
+      padding: 38px;
+      align-self: center;
+    }
+
+    .project-copy h3 {
+      font-size: 1.45rem;
+      margin-bottom: 16px;
+    }
+
+    .project-copy p {
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      background: var(--accent-light);
+      color: var(--primary);
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .project-note {
+      border-left: 3px solid var(--earth);
+      padding-left: 14px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* Fieldwork gallery */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: var(--accent-light);
+    }
+
+    .gallery-content {
+      padding: 22px;
+    }
+
+    .gallery-content h3 {
+      margin-bottom: 8px;
+    }
+
+    .gallery-content p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 0;
+    }
+
+    .image-note {
+      margin-top: 20px;
+      padding: 15px 18px;
+      border-radius: 10px;
+      background: #F1F0E8;
+      color: #66583F;
+      font-size: 0.86rem;
+    }
+
+    /* Timeline / experience */
+
+    .timeline {
+      position: relative;
+      margin-left: 7px;
+      padding-left: 30px;
+      border-left: 2px solid var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 35px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -38px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border: 3px solid var(--background);
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-top h3 {
+      margin-bottom: 5px;
+    }
+
+    .timeline-date {
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      background: var(--accent-light);
+      padding: 5px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .timeline-place {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .timeline-item ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .timeline-item li {
+      margin-bottom: 7px;
+    }
+
+    /* Education */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .education-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .education-card .date {
+      color: var(--accent-dark);
+      font-size: 0.83rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .education-card h3 {
+      margin-bottom: 9px;
+    }
+
+    .education-card .institution {
+      color: var(--muted);
+      margin-bottom: 15px;
+      font-size: 0.93rem;
+    }
+
+    .grade {
+      display: inline-block;
+      padding: 6px 11px;
+      background: var(--accent-light);
+      color: var(--primary);
+      border-radius: 7px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .coursework {
+      color: var(--muted);
+      font-size: 0.91rem;
+      margin-top: 16px;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .skill-card h3 {
+      margin-bottom: 17px;
+    }
+
+    .skill-card .tag-list {
+      margin-bottom: 0;
+    }
+
+    /* Conferences */
+
+    .conference-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .conference-card {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .conference-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 11px;
+      background: var(--accent-light);
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .conference-card h3 {
+      font-size: 1rem;
+      margin-bottom: 7px;
+    }
+
+    .conference-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 0;
+    }
+
+    /* Leadership and language */
+
+    .two-column-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .content-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .content-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .content-card p {
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .content-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .language-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .language-row:last-child {
+      border-bottom: 0;
+    }
+
+    .language-level {
+      color: var(--accent-dark);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    /* References */
+
+    .reference-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .reference-card {
+      padding: 27px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .reference-card h3 {
+      margin-bottom: 6px;
+    }
+
+    .reference-role {
+      color: var(--accent-dark);
+      font-weight: 600;
+      font-size: 0.91rem;
+      margin-bottom: 10px;
+    }
+
+    .reference-card p {
+      color: var(--muted);
+      font-size: 0.91rem;
+      margin-bottom: 8px;
+    }
+
+    .reference-card a {
+      overflow-wrap: anywhere;
+    }
+
+    /* Contact */
+
+    .contact-section {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .contact-section h2 {
+      color: #fff;
+    }
+
+    .contact-section .eyebrow {
+      color: #A7D6C1;
+    }
+
+    .contact-section p {
+      color: #D4E4DC;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 15px 17px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 11px;
+      color: #fff;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-link:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.13);
+    }
+
+    .contact-link strong {
+      display: block;
+      font-size: 0.91rem;
+    }
+
+    .contact-link span {
+      display: block;
+      color: #C8DCD3;
+      font-size: 0.84rem;
+    }
+
+    .contact-mark {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: rgba(167, 214, 193, 0.15);
+      color: #A7D6C1;
+      font-weight: 800;
+    }
+
+    .contact-note {
+      border-left: 2px solid var(--earth);
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    .contact-note p {
+      font-size: 0.94rem;
+    }
+
+    /* Footer */
+
+    .site-footer {
+      background: #0D302F;
+      color: #BBD0C7;
+      padding: 25px 0;
+      font-size: 0.85rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner a {
+      color: #DDECE4;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 950px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+
+      .hero-grid {
+        gap: 38px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-grid {
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 18px;
+        background: var(--background);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 0;
+        font-size: 0.92rem;
+      }
+
+      .hero {
+        padding: 55px 0 48px;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .project-card,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .hero-visual {
+        width: min(100%, 330px);
+        justify-self: center;
+      }
+
+      .photo-label {
+        left: -10px;
+      }
+
+      .interest-list {
+        justify-content: flex-start;
+        gap: 13px 22px;
+      }
+
+      .about-grid {
+        gap: 30px;
+      }
+
+      .project-visual,
+      .project-visual img {
+        min-height: 250px;
+        max-height: 360px;
+      }
+
+      .project-copy {
+        padding: 27px;
+      }
+
+      .gallery-grid,
+      .education-grid,
+      .conference-grid,
+      .two-column-grid,
+      .reference-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        gap: 25px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        width: min(100% - 28px, var(--max-width));
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .timeline-top {
+        display: block;
+      }
+
+      .timeline-date {
+        display: inline-block;
+        margin-top: 8px;
+      }
+
+      .focus-card,
+      .education-card,
+      .skill-card,
+      .content-card,
+      .reference-card {
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-
-<!-- =========================================
-     NAVIGATION
-========================================= -->
-
-<header class="header">
-
+  <!-- Navigation -->
+  <header class="site-header">
     <div class="container nav">
+      <a class="brand" href="#home">Ratul<span>.</span></a>
 
-        <a href="#" class="brand">
-            RH<span>.</span>
-        </a>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >Menu ☰</button>
 
-
-        <nav class="navigation">
-
-            <a href="#about">About</a>
-
-            <a href="#education">Education</a>
-
-            <a href="#research">Research</a>
-
-            <a href="#experience">Experience</a>
-
-            <a href="#projects">Projects</a>
-
-        </nav>
-
-
-        <a href="#contact" class="nav-cta">
-            Contact
-        </a>
-
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#fieldwork">Fieldwork</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-</header>
+  <main>
 
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Oceanography · Environmental Science · GIS</span>
 
+          <h1>
+            Understanding our
+            <span>changing environment.</span>
+          </h1>
 
-<main>
+          <p class="hero-description">
+            I'm MD Ratul Hasan Ripon, an oceanography graduate with experience
+            in environmental research, geospatial analysis, and data analytics.
+            I'm interested in understanding coastal and environmental change
+            through scientific research and data-driven approaches.
+          </p>
 
+          <div class="hero-actions">
+            <a class="button" href="#research">Explore My Research ↗</a>
+            <a class="button button-outline" href="assets/cv.pdf" target="_blank" rel="noopener">
+              View My CV ↗
+            </a>
+          </div>
 
-<!-- =========================================
-     HERO
-========================================= -->
+          <div class="hero-meta">
+            <span>Oceanography Graduate</span>
+            <span>GIS & Remote Sensing</span>
+            <span>Bangladesh</span>
+          </div>
+        </div>
 
-<section class="hero">
+        <div class="hero-visual">
+          <div class="hero-photo-frame">
+            <img
+              class="hero-photo"
+              src="assets/profile.jpg"
+              alt="Portrait of MD Ratul Hasan Ripon"
+              fetchpriority="high"
+            >
+          </div>
 
-    <div class="container hero-grid">
+          <div class="photo-label">
+            <strong>MD Ratul Hasan Ripon</strong>
+            <span>Environmental & Geospatial Research</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Research interests strip -->
+    <section class="interest-strip" aria-label="Research interests">
+      <div class="container interest-list">
+        <div class="interest-item"><span class="interest-dot"></span>Oceanography</div>
+        <div class="interest-item"><span class="interest-dot"></span>Environmental Sustainability</div>
+        <div class="interest-item"><span class="interest-dot"></span>GIS & Remote Sensing</div>
+        <div class="interest-item"><span class="interest-dot"></span>Coastal Change</div>
+      </div>
+    </section>
 
-        <div class="hero-content">
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="section-heading">
+            <span class="eyebrow">About Me</span>
+            <h2>From ocean systems to environmental change</h2>
+          </div>
 
-            <div class="eyebrow">
-
-                <span class="dot"></span>
-
-                OCEANOGRAPHY · GIS · DATA ANALYSIS
-
-            </div>
-
-
-            <h1>
-
-                MD. Ratul
-                <br>
-
-                <span>Hasan Ripon</span>
-
-            </h1>
-
-
-            <p class="hero-text">
-
-                Oceanography graduate with experience in
-                environmental research, data analysis, GIS,
-                remote sensing, and geospatial analysis.
-
+          <div class="about-copy">
+            <p>
+              My academic background is in oceanography, a field that helped me
+              understand the connections between marine systems, coastal
+              environments, climate, and human activities.
             </p>
-
-
-            <div class="hero-buttons">
-
-                <a
-                    href="#research"
-                    class="button button-primary"
-                >
-                    Explore my work
-                    <span>→</span>
-                </a>
-
-
-                <a
-                    href="assets/cv.pdf"
-                    class="button button-secondary"
-                    download
-                >
-                    Download CV
-                </a>
-
-            </div>
-
-
-            <div class="hero-meta">
-
-                <div>
-
-                    <span>Based in</span>
-
-                    <strong>
-                        Bangladesh
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>Degree</span>
-
-                    <strong>
-                        M.Sc. Oceanography
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>University</span>
-
-                    <strong>
-                        SUST
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PROFILE CARD -->
-
-        <div class="hero-profile">
-
-
-            <div class="profile-image">
-
-                <img
-                    src="assets/profile.jpg"
-                    alt="MD. Ratul Hasan Ripon"
-                >
-
-            </div>
-
-
-            <div class="profile-info">
-
-                <span class="profile-label">
-                    CURRENT FOCUS
-                </span>
-
-
-                <h3>
-                    Data analysis,
-                    GIS & oceanography
-                </h3>
-
-
-                <p>
-
-                    Interested in environmental science,
-                    oceanographic research, geospatial
-                    analysis, and using data to understand
-                    environmental systems.
-
-                </p>
-
-            </div>
-
-
-            <div class="profile-footer">
-
-                <span>
-                    Academic & Professional Portfolio
-                </span>
-
-                <span>
-                    2026
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     PROFILE INTRO
-========================================= -->
-
-<section class="quick-section">
-
-    <div class="container quick-grid">
-
-
-        <div class="quick-label">
-            PROFILE
-        </div>
-
-
-        <div class="quick-text">
 
             <p>
-
-                An academic background in Oceanography,
-                combined with research experience and
-                professional experience in data analysis.
-
+              Through my academic research, I explored changes in land cover
+              and shoreline patterns using remote sensing and GIS. My research
+              experience also involved environmental data collection, data
+              organization, field activities, and coastal monitoring.
             </p>
 
-        </div>
-
-
-        <div class="quick-number">
-            01
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     ABOUT
-========================================= -->
-
-<section
-    id="about"
-    class="section"
->
-
-    <div class="container section-grid">
-
-
-        <div class="section-label">
-
-            <span>02</span>
-
-            ABOUT
-
-        </div>
-
-
-        <div class="section-content">
-
-            <h2>
-
-                Connecting oceanography,
-                research and data.
-
-            </h2>
-
-
-            <div class="about-columns">
-
-                <p>
-
-                    I am an Oceanography graduate from
-                    Shahjalal University of Science and
-                    Technology with an academic background
-                    in environmental and oceanographic
-                    research.
-
-                    My interests include GIS, remote sensing,
-                    spatial analysis, environmental data and
-                    scientific data interpretation.
-
-                </p>
-
-
-                <p>
-
-                    I also work as a Data Analyst at AuthLab,
-                    where my professional experience includes
-                    data analysis, visualization, statistical
-                    analysis, reporting and analytical work.
-
-                    This combination gives me a multidisciplinary
-                    perspective across science, data and
-                    technology.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     EDUCATION
-========================================= -->
-
-<section
-    id="education"
-    class="section section-gray"
->
-
-    <div class="container section-grid">
-
-
-        <div class="section-label">
-
-            <span>03</span>
-
-            EDUCATION
-
-        </div>
-
-
-        <div class="section-content">
-
-            <div class="education-list">
-
-
-                <!-- MSc -->
-
-                <article class="education-item">
-
-                    <div class="education-year">
-                        2025
-                    </div>
-
-
-                    <div class="education-main">
-
-                        <span>
-                            MASTER'S DEGREE
-                        </span>
-
-                        <h2>
-                            M.Sc. in Oceanography
-                        </h2>
-
-                        <h3>
-                            Shahjalal University of
-                            Science and Technology
-                        </h3>
-
-                        <div class="education-result">
-
-                            <span>
-                                CGPA
-                            </span>
-
-                            <strong>
-                                3.56
-                            </strong>
-
-                            <small>
-                                / 4.00
-                            </small>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BSc -->
-
-                <article class="education-item">
-
-                    <div class="education-year">
-                        2024
-                    </div>
-
-
-                    <div class="education-main">
-
-                        <span>
-                            BACHELOR'S DEGREE
-                        </span>
-
-                        <h2>
-                            B.Sc. (Honors) in Oceanography
-                        </h2>
-
-                        <h3>
-                            Shahjalal University of
-                            Science and Technology
-                        </h3>
-
-                        <div class="education-result">
-
-                            <span>
-                                CGPA
-                            </span>
-
-                            <strong>
-                                3.40
-                            </strong>
-
-                            <small>
-                                / 4.00
-                            </small>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- HSC -->
-
-                <article class="education-item compact">
-
-                    <div class="education-year">
-                        2018
-                    </div>
-
-
-                    <div class="education-main">
-
-                        <span>
-                            HIGHER SECONDARY
-                        </span>
-
-                        <h2>
-                            H.S.C. in Science
-                        </h2>
-
-                        <h3>
-                            Dinajpur Govt. College
-                        </h3>
-
-                        <div class="simple-result">
-                            GPA 4.00 / 5.00
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- SSC -->
-
-                <article class="education-item compact">
-
-                    <div class="education-year">
-                        2016
-                    </div>
-
-
-                    <div class="education-main">
-
-                        <span>
-                            SECONDARY
-                        </span>
-
-                        <h2>
-                            S.S.C. in Science
-                        </h2>
-
-                        <h3>
-                            B.P. Govt. High School,
-                            Panchagarh
-                        </h3>
-
-                        <div class="simple-result">
-                            GPA 5.00 / 5.00
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     RESEARCH
-========================================= -->
-
-<section
-    id="research"
-    class="section"
->
-
-    <div class="container section-grid">
-
-
-        <div class="section-label">
-
-            <span>04</span>
-
-            RESEARCH
-
-        </div>
-
-
-        <div class="section-content">
-
-            <h2>
-                Research experience
-            </h2>
-
-
-            <p class="section-intro">
-
-                Academic research and field experience
-                focused on oceanographic and environmental
-                data.
-
+            <p>
+              Alongside my research background, my work in data analytics has
+              strengthened my interest in data cleaning, statistical analysis,
+              visualization, and communicating analytical findings.
             </p>
 
-
-            <div class="research-feature">
-
-                <div class="research-feature-top">
-
-                    <span>
-                        RESEARCH ASSISTANT
-                    </span>
-
-                    <span>
-                        JAN 2025 — DEC 2025
-                    </span>
-
-                </div>
-
-
-                <h3>
-                    Shahjalal University of Science
-                    and Technology
-                </h3>
-
-
-                <p>
-
-                    Supported oceanographic field data
-                    collection and research activities
-                    involving environmental and marine
-                    datasets.
-
-                </p>
-
-
-                <div class="research-tags">
-
-                    <span>
-                        Oceanographic Data
-                    </span>
-
-                    <span>
-                        Marine Biodiversity
-                    </span>
-
-                    <span>
-                        Coastal Monitoring
-                    </span>
-
-                    <span>
-                        Environmental Research
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="research-grid">
-
-
-                <article class="research-card">
-
-                    <span>01</span>
-
-                    <h3>
-                        GIS & Spatial Analysis
-                    </h3>
-
-                    <p>
-
-                        Working with geospatial data,
-                        mapping and spatial analysis
-                        for environmental applications.
-
-                    </p>
-
-                </article>
-
-
-                <article class="research-card">
-
-                    <span>02</span>
-
-                    <h3>
-                        Remote Sensing
-                    </h3>
-
-                    <p>
-
-                        Using remote sensing approaches
-                        for environmental observation
-                        and analysis.
-
-                    </p>
-
-                </article>
-
-
-                <article class="research-card">
-
-                    <span>03</span>
-
-                    <h3>
-                        Oceanographic Research
-                    </h3>
-
-                    <p>
-
-                        Experience with oceanographic
-                        field variables including
-                        temperature, salinity and
-                        dissolved oxygen.
-
-                    </p>
-
-                </article>
-
-
-                <article class="research-card">
-
-                    <span>04</span>
-
-                    <h3>
-                        Environmental Data
-                    </h3>
-
-                    <p>
-
-                        Analysis and interpretation of
-                        environmental and geospatial
-                        datasets.
-
-                    </p>
-
-                </article>
-
-            </div>
-
+            <p>
+              I want to continue developing my knowledge in environmental
+              science, climate-related challenges, coastal sustainability, and
+              geospatial research.
+            </p>
+          </div>
         </div>
 
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     EXPERIENCE
-========================================= -->
-
-<section
-    id="experience"
-    class="section section-gray"
->
-
-    <div class="container section-grid">
-
-
-        <div class="section-label">
-
-            <span>05</span>
-
-            EXPERIENCE
-
-        </div>
-
-
-        <div class="section-content">
-
-
-            <!-- AUTHLAB -->
-
-            <article class="experience-item">
-
-                <div class="experience-date">
-
-                    JAN 2026 — PRESENT
-
-                </div>
-
-
-                <div class="experience-main">
-
-                    <span class="experience-type">
-                        PROFESSIONAL EXPERIENCE
-                    </span>
-
-
-                    <h2>
-                        Data Analyst
-                    </h2>
-
-
-                    <h3>
-                        AuthLab
-                    </h3>
-
-
-                    <p>
-
-                        Working with data analysis,
-                        visualization, statistical and
-                        performance analysis, reporting,
-                        interpretation, and research-oriented
-                        analytical work.
-
-                    </p>
-
-
-                    <div class="experience-tags">
-
-                        <span>
-                            Data Analysis
-                        </span>
-
-                        <span>
-                            Data Visualization
-                        </span>
-
-                        <span>
-                            Statistical Analysis
-                        </span>
-
-                        <span>
-                            Reporting
-                        </span>
-
-                        <span>
-                            Research
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- RESEARCH ASSISTANT -->
-
-            <article class="experience-item">
-
-                <div class="experience-date">
-
-                    JAN 2025 — DEC 2025
-
-                </div>
-
-
-                <div class="experience-main">
-
-                    <span class="experience-type">
-                        RESEARCH EXPERIENCE
-                    </span>
-
-
-                    <h2>
-                        Research Assistant
-                    </h2>
-
-
-                    <h3>
-                        Shahjalal University of
-                        Science and Technology
-                    </h3>
-
-
-                    <p>
-
-                        Supported field data collection
-                        for oceanographic variables,
-                        marine biodiversity monitoring,
-                        coastal monitoring activities,
-                        workshops and stakeholder
-                        engagement.
-
-                    </p>
-
-
-                    <div class="experience-tags">
-
-                        <span>
-                            Oceanography
-                        </span>
-
-                        <span>
-                            Field Research
-                        </span>
-
-                        <span>
-                            Environmental Data
-                        </span>
-
-                        <span>
-                            Coastal Monitoring
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     SKILLS
-========================================= -->
-
-<section class="section">
-
-    <div class="container section-grid">
-
-
-        <div class="section-label">
-
-            <span>06</span>
-
-            SKILLS
-
-        </div>
-
-
-        <div class="section-content">
-
-            <h2>
-                Tools & capabilities
-            </h2>
-
-
-            <div class="skills-grid">
-
-
-                <div class="skill-group">
-
-                    <span>
-                        DATA & PROGRAMMING
-                    </span>
-
-                    <div>
-
-                        <b>R</b>
-                        <b>Python</b>
-                        <b>MATLAB</b>
-                        <b>Statistical Analysis</b>
-                        <b>Data Visualization</b>
-
-                    </div>
-
-                </div>
-
-
-                <div class="skill-group">
-
-                    <span>
-                        GIS & SPATIAL ANALYSIS
-                    </span>
-
-                    <div>
-
-                        <b>ArcGIS</b>
-                        <b>QGIS</b>
-                        <b>Geospatial Data Analysis</b>
-                        <b>Spatial Analysis</b>
-
-                    </div>
-
-                </div>
-
-
-                <div class="skill-group">
-
-                    <span>
-                        SCIENTIFIC TOOLS
-                    </span>
-
-                    <div>
-
-                        <b>Ocean Data View</b>
-                        <b>Environmental Data</b>
-
-                    </div>
-
-                </div>
-
-
-                <div class="skill-group">
-
-                    <span>
-                        PRODUCTIVITY & DESIGN
-                    </span>
-
-                    <div>
-
-                        <b>Microsoft Excel</b>
-                        <b>Word</b>
-                        <b>PowerPoint</b>
-                        <b>Google Workspace</b>
-                        <b>Adobe Illustrator</b>
-                        <b>Adobe Photoshop</b>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     CONFERENCES
-========================================= -->
-
-<section class="section section-gray">
-
-    <div class="container section-grid">
-
-
-        <div class="section-label">
-
-            <span>07</span>
-
-            CONFERENCES
-
-        </div>
-
-
-        <div class="section-content">
-
-            <h2>
-                Academic activities
-            </h2>
-
-
-            <div class="conference-list">
-
-
-                <div class="conference">
-
-                    <span>2026</span>
-
-                    <h3>
-                        International Symposium on Coast,
-                        Climate and Community (ISCCC)
-                    </h3>
-
-                </div>
-
-
-                <div class="conference">
-
-                    <span>2025</span>
-
-                    <h3>
-                        International Conference on MSP
-                        for Advancing Sustainable Blue Growth
-                    </h3>
-
-                </div>
-
-
-                <div class="conference">
-
-                    <span>2023</span>
-
-                    <h3>
-                        International Symposium on
-                        Marine Resource Management
-                    </h3>
-
-                </div>
-
-
-                <div class="conference">
-
-                    <span>2022</span>
-
-                    <h3>
-                        1st International Conference
-                        of Physical Sciences
-                    </h3>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     PROJECTS
-========================================= -->
-
-<section
-    id="projects"
-    class="section"
->
-
-    <div class="container section-grid">
-
-
-        <div class="section-label">
-
-            <span>08</span>
-
-            PROJECTS
-
-        </div>
-
-
-        <div class="section-content">
-
-            <h2>
-                Selected academic work
-            </h2>
-
-
-            <div class="projects">
-
-
-                <article class="project">
-
-                    <div class="project-number">
-                        01
-                    </div>
-
-
-                    <div class="project-body">
-
-                        <span>
-                            OCEANOGRAPHY
-                        </span>
-
-                        <h3>
-                            Oceanographic Field Data
-                            Collection
-                        </h3>
-
-                        <p>
-
-                            Field research involving
-                            temperature vertical profiles,
-                            salinity and dissolved oxygen
-                            measurements.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="project-arrow">
-                        →
-                    </div>
-
-                </article>
-
-
-
-                <article class="project">
-
-                    <div class="project-number">
-                        02
-                    </div>
-
-
-                    <div class="project-body">
-
-                        <span>
-                            GIS & REMOTE SENSING
-                        </span>
-
-                        <h3>
-                            Geospatial & Environmental
-                            Data Analysis
-                        </h3>
-
-                        <p>
-
-                            Academic work involving GIS,
-                            remote sensing, spatial analysis
-                            and environmental datasets.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="project-arrow">
-                        →
-                    </div>
-
-                </article>
-
-
-
-                <article class="project">
-
-                    <div class="project-number">
-                        03
-                    </div>
-
-
-                    <div class="project-body">
-
-                        <span>
-                            PROFESSIONAL
-                        </span>
-
-                        <h3>
-                            Data Analysis & Visualization
-                        </h3>
-
-                        <p>
-
-                            Professional analytical work
-                            involving data interpretation,
-                            reporting, visualization and
-                            performance analysis.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="project-arrow">
-                        →
-                    </div>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     LEADERSHIP
-========================================= -->
-
-<section class="section section-gray">
-
-    <div class="container section-grid">
-
-
-        <div class="section-label">
-
-            <span>09</span>
-
-            ACTIVITIES
-
-        </div>
-
-
-        <div class="section-content">
-
-            <h2>
-                Leadership & activities
-            </h2>
-
-
-            <div class="activity-list">
-
-
-                <div class="activity">
-
-                    <span>
-                        2026
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Student Volunteer Organizer
-                        </h3>
-
-                        <p>
-                            International Symposium on
-                            Coast, Climate and Community
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="activity">
-
-                    <span>
-                        2023 — 2024
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Student Ambassador
-                        </h3>
-
-                        <p>
-                            Oceanography Society, SUST
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="activity">
-
-                    <span>
-                        2023 — 2024
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Former Vice-President
-                        </h3>
-
-                        <p>
-                            RIM Musical Club, SUST
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="activity">
-
-                    <span>
-                        2023 — 2024
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Former Vice-President
-                        </h3>
-
-                        <p>
-                            Dinajpur-Nilphamari Student
-                            Association, SUST
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- References -->
-<section class="section" id="references">
-    <div class="container">
-
+        <aside class="focus-card">
+          <h3>Research interests</h3>
+          <ul class="focus-list">
+            <li>Environmental science and sustainability</li>
+            <li>Coastal and shoreline change</li>
+            <li>Land-use and land-cover dynamics</li>
+            <li>GIS and remote sensing applications</li>
+            <li>Oceanographic and environmental data analysis</li>
+            <li>Climate change and coastal environments</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Research project -->
+    <section class="section section-white" id="research">
+      <div class="container">
         <div class="section-heading">
-            <span class="section-number">10</span>
+          <span class="eyebrow">Featured Research</span>
+          <h2>Research that explores environmental change</h2>
+          <p>
+            My academic project examined changes in coastal land cover and
+            shoreline patterns using geospatial tools and field validation.
+          </p>
+        </div>
 
+        <article class="project-card">
+          <div class="project-visual">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85"
+              alt="Coastal landscape representing environmental and land-cover research"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="project-copy">
+            <span class="eyebrow">Academic Research · 2023</span>
+
+            <h3>
+              Dynamic Transformations in Land Cover and Shoreline:
+              A Decadal Analysis of Nijhum Dwip, Bangladesh Using Remote
+              Sensing and GIS
+            </h3>
+
+            <p>
+              This research investigated decadal changes in land cover and
+              shoreline patterns in Nijhum Dwip, Bangladesh, using remote
+              sensing and GIS techniques.
+            </p>
+
+            <p>
+              The work included spatial analysis of environmental changes,
+              in-situ field validation, and interpretation of coastal and
+              land-use transformations.
+            </p>
+
+            <div class="tag-list">
+              <span class="tag">GIS</span>
+              <span class="tag">Remote Sensing</span>
+              <span class="tag">Land-Cover Change</span>
+              <span class="tag">Coastal Research</span>
+            </div>
+
+            <p class="project-note">
+              Research period: January–October 2023.
+              Add your own study-area map, satellite comparison, or final
+              research poster here when available.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Working activities gallery -->
+    <section class="section" id="fieldwork">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Research in Practice</span>
+          <h2>Fieldwork, analysis, and academic activities</h2>
+          <p>
+            A visual section for documenting my research activities, geospatial
+            work, environmental data analysis, and academic engagement.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <article class="gallery-card">
+            <img
+              class="gallery-image"
+              src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85"
+              alt="Ocean waves and coastal environment"
+              loading="lazy"
+            >
+            <div class="gallery-content">
+              <h3>Coastal and Ocean Research</h3>
+              <p>
+                Use this space for your own coastal survey photographs,
+                field observations, environmental sampling, and marine research.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img
+              class="gallery-image"
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85"
+              alt="Digital representation of Earth for geospatial research"
+              loading="lazy"
+            >
+            <div class="gallery-content">
+              <h3>GIS and Remote Sensing</h3>
+              <p>
+                Showcase your own GIS maps, satellite imagery, shoreline
+                comparisons, and land-use/land-cover analysis.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img
+              class="gallery-image"
+              src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1000&q=85"
+              alt="Scientific laboratory environment"
+              loading="lazy"
+            >
+            <div class="gallery-content">
+              <h3>Environmental Data Analysis</h3>
+              <p>
+                Add authentic photographs of laboratory activities,
+                environmental measurements, research datasets, or analytical
+                workflows you have personally worked on.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img
+              class="gallery-image"
+              src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=85"
+              alt="People collaborating in a group setting"
+              loading="lazy"
+            >
+            <div class="gallery-content">
+              <h3>Conferences and Workshops</h3>
+              <p>
+                Replace this image with your own conference, workshop,
+                presentation, or community coastal-monitoring activity photos.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="image-note">
+          <strong>Photo note:</strong> The images above are illustrative stock
+          photos, not verified records of your activities. Replace them with
+          your own photographs before presenting this gallery as a personal
+          work portfolio. You can also add maps and figures from your research
+          when you have permission to share them.
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section-white" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Professional Experience</span>
+          <h2>Research and analytical experience</h2>
+          <p>
+            My experience combines academic research with data analysis
+            and practical analytical work.
+          </p>
+        </div>
+
+        <div class="timeline">
+
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <h3>Data Analyst</h3>
+                <div class="timeline-place">AuthLab · Sylhet, Bangladesh</div>
+              </div>
+              <span class="timeline-date">Aug 2024 – Present</span>
+            </div>
+
+            <ul>
+              <li>Analyze datasets and organize data for reporting and interpretation.</li>
+              <li>Perform data cleaning, statistical analysis, and visualization.</li>
+              <li>Identify patterns and trends to support analytical decisions.</li>
+              <li>Prepare reports and communicate findings to relevant stakeholders.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <h3>University Research Assistant</h3>
+                <div class="timeline-place">
+                  Department of Oceanography, Shahjalal University of Science
+                  and Technology (SUST) · Sylhet, Bangladesh
+                </div>
+              </div>
+              <span class="timeline-date">Mar 2024 – Mar 2025</span>
+            </div>
+
+            <p class="muted small">
+              Research supervisor: Dr. Subrata Sarker
+            </p>
+
+            <ul>
+              <li>Assisted with oceanographic and environmental research activities.</li>
+              <li>Supported field data collection and processing of temperature, salinity, and dissolved oxygen measurements.</li>
+              <li>Contributed to marine biodiversity monitoring and coastal assessment activities.</li>
+              <li>Organized, analyzed, and interpreted research data.</li>
+              <li>Helped train local fishers and students to use the C4CEM mobile app for community coastal monitoring.</li>
+              <li>Supported workshops and stakeholder engagement activities.</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Education</span>
+          <h2>Academic background</h2>
+          <p>
+            My academic training provides a foundation in ocean systems,
+            environmental processes, and geospatial research.
+          </p>
+        </div>
+
+        <div class="education-grid">
+
+          <article class="education-card">
+            <div class="date">January 2019 – January 2024</div>
+            <h3>BSc (Honours) in Oceanography</h3>
+            <p class="institution">
+              Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh
+            </p>
+            <span class="grade">CGPA: 3.40 / 4.00</span>
+            <p class="coursework">
+              <strong>Relevant coursework:</strong> Marine Environment and
+              Climate Change, Coastal and Marine Pollution, Blue Economy and
+              Sustainable Development, Integrated Coastal Zone Management,
+              Mangrove and Coral Ecosystems, Coastal Geomorphology, GIS,
+              Remote Sensing, Satellite Oceanography, Statistics, Research
+              Methods, Ocean Modelling, and Computing.
+            </p>
+          </article>
+
+          <article class="education-card">
+            <div class="date">May 2016 – May 2018</div>
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <p class="institution">
+              Dinajpur Government College, Dinajpur, Bangladesh
+            </p>
+            <span class="grade">GPA: 4.00 / 5.00</span>
+            <p class="coursework">
+              Completed higher secondary education before beginning my
+              undergraduate studies in oceanography.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical skills -->
+    <section class="section section-white" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Technical Skills</span>
+          <h2>Tools and methods</h2>
+          <p>
+            A selection of the tools and research methods listed in my
+            academic and professional background.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-card">
+            <h3>GIS and Remote Sensing</h3>
+            <div class="tag-list">
+              <span class="tag">ArcGIS</span>
+              <span class="tag">QGIS</span>
+              <span class="tag">ERDAS</span>
+              <span class="tag">Google Earth Engine</span>
+              <span class="tag">Google Earth Pro</span>
+              <span class="tag">Cartography</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Data and Computing</h3>
+            <div class="tag-list">
+              <span class="tag">R</span>
+              <span class="tag">Python</span>
+              <span class="tag">MATLAB</span>
+              <span class="tag">Statistics</span>
+              <span class="tag">Data Cleaning</span>
+              <span class="tag">Data Visualization</span>
+              <span class="tag">Microsoft Excel</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Oceanography and Research</h3>
+            <div class="tag-list">
+              <span class="tag">Ocean Data View (ODV)</span>
+              <span class="tag">Environmental Monitoring</span>
+              <span class="tag">Field Data Collection</span>
+              <span class="tag">Technical Report Writing</span>
+              <span class="tag">Scientific Presentation</span>
+              <span class="tag">Stakeholder Engagement</span>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="muted small" style="margin-top: 18px;">
+          Specific instrument experience should be added only where it reflects
+          your actual hands-on experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- Conferences -->
+    <section class="section" id="conferences">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Academic Engagement</span>
+          <h2>Conferences and scientific events</h2>
+          <p>
+            Participation in scientific conferences and academic events has
+            helped me engage with research, sustainability, and ocean-related
+            discussions.
+          </p>
+        </div>
+
+        <div class="conference-grid">
+
+          <article class="conference-card">
+            <div class="conference-icon">01</div>
             <div>
-                <p class="eyebrow">ACADEMIC REFERENCES</p>
-                <h2>References</h2>
+              <h3>ISCCC 2026</h3>
+              <p>
+                Academic conference involvement and support for coordination
+                and research communication.
+              </p>
             </div>
+          </article>
+
+          <article class="conference-card">
+            <div class="conference-icon">02</div>
+            <div>
+              <h3>International Conference on MSP for Advancing Sustainable Blue Growth 2025</h3>
+              <p>
+                Conference coordination and engagement with sustainable
+                blue-growth themes.
+              </p>
+            </div>
+          </article>
+
+          <article class="conference-card">
+            <div class="conference-icon">03</div>
+            <div>
+              <h3>ISMRM 2023</h3>
+              <p>
+                Academic conference experience.
+              </p>
+            </div>
+          </article>
+
+          <article class="conference-card">
+            <div class="conference-icon">04</div>
+            <div>
+              <h3>1st International Conference of Physical Sciences 2022</h3>
+              <p>
+                Participation in a scientific academic event.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership and languages -->
+    <section class="section section-white" id="activities">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Beyond Research</span>
+          <h2>Leadership and communication</h2>
         </div>
 
-        <div class="references-intro">
+        <div class="two-column-grid">
+
+          <article class="content-card">
+            <h3>Conference Coordination</h3>
+            <p class="muted small">ISCCC 2026 and MSP Conference 2025</p>
             <p>
-                Academic references available for research, higher education,
-                and professional opportunities.
+              Supported conference coordination, outreach, abstract book
+              preparation, workshops, and academic event activities.
             </p>
-        </div>
 
-        <div class="references-grid">
+            <h3 style="margin-top: 26px;">Student Ambassador</h3>
+            <p class="muted small">
+              Oceanography Society, SUST · 2023–2024
+            </p>
+            <p>
+              Represented the department, encouraged student engagement,
+              and helped prospective students learn about oceanography.
+            </p>
+          </article>
 
-            <!-- Reference 01 -->
-            <div class="reference-card">
+          <article class="content-card">
+            <h3>Languages</h3>
 
-                <div class="reference-number">
-                    01
-                </div>
-
-                <div class="reference-content">
-
-                    <h3>Dr. Subrata Sarker</h3>
-
-                    <p class="reference-position">
-                        Associate Professor
-                    </p>
-
-                    <p class="reference-department">
-                        Department of Oceanography<br>
-                        Shahjalal University of Science and Technology<br>
-                        Sylhet-3114, Bangladesh
-                    </p>
-
-                    <div class="reference-contact">
-
-                        <a href="mailto:subratasrk-ocg@sust.edu">
-                            subratasrk-ocg@sust.edu
-                        </a>
-
-                        <a
-                            href="https://www.sust.edu/departments/ocg/faculty/subratasrk-ocg@sust.edu"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Faculty Profile ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
+            <div class="language-row">
+              <span>Bengali</span>
+              <span class="language-level">Native</span>
             </div>
 
-
-            <!-- Reference 02 -->
-            <div class="reference-card">
-
-                <div class="reference-number">
-                    02
-                </div>
-
-                <div class="reference-content">
-
-                    <h3>Muhammad Mizanur Rahman</h3>
-
-                    <p class="reference-position">
-                        Assistant Professor
-                    </p>
-
-                    <p class="reference-department">
-                        Department of Oceanography<br>
-                        Shahjalal University of Science and Technology<br>
-                        Sylhet-3114, Bangladesh
-                    </p>
-
-                    <div class="reference-contact">
-
-                        <a href="mailto:mmrahman-ocg@sust.edu">
-                            mmrahman-ocg@sust.edu
-                        </a>
-
-                    </div>
-
-                </div>
-
+            <div class="language-row">
+              <span>English</span>
+              <span class="language-level">B2</span>
             </div>
 
+            <h3 style="margin-top: 25px;">English Proficiency</h3>
+            <p>
+              <strong>IELTS Academic</strong><br>
+              <span class="muted small">British Council · 9 August 2026</span>
+            </p>
+
+            <div class="tag-list">
+              <span class="tag">Overall 6.5</span>
+              <span class="tag">Listening 6.5</span>
+              <span class="tag">Reading 6.5</span>
+              <span class="tag">Writing 6.0</span>
+              <span class="tag">Speaking 6.5</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- References -->
+    <section class="section" id="references">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Academic References</span>
+          <h2>Academic contacts</h2>
+          <p>
+            Academic references are listed in my CV. Please contact referees
+            respectfully and in accordance with their preferences.
+          </p>
         </div>
 
-    </div>
-</section>
-<!-- =========================================
-     CONTACT
-========================================= -->
+        <div class="reference-grid">
 
-<section
-    id="contact"
-    class="contact"
->
+          <article class="reference-card">
+            <h3>Dr. Subrata Sarker</h3>
+            <div class="reference-role">Associate Professor</div>
+            <p>Department of Oceanography</p>
+            <p>Shahjalal University of Science and Technology (SUST)</p>
+            <p>Sylhet-3114, Bangladesh</p>
+            <p>
+              <a href="mailto:subratasrk-ocg@sust.edu">
+                subratasrk-ocg@sust.edu
+              </a>
+            </p>
+          </article>
 
-    <div class="container contact-grid">
+          <article class="reference-card">
+            <h3>Muhammad Mizanur Rahman</h3>
+            <div class="reference-role">Assistant Professor</div>
+            <p>Department of Oceanography</p>
+            <p>Shahjalal University of Science and Technology (SUST)</p>
+            <p>Sylhet-3114, Bangladesh</p>
+            <p>
+              <a href="mailto:mmrahman-ocg@sust.edu">
+                mmrahman-ocg@sust.edu
+              </a>
+            </p>
+          </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
 
         <div>
+          <span class="eyebrow">Get in Touch</span>
+          <h2>Let's connect through research.</h2>
 
-            <span class="section-label">
-                10 · CONTACT
+          <p style="margin-top: 18px;">
+            I'm interested in environmental science, oceanography, GIS,
+            remote sensing, and research opportunities related to coastal
+            environments and sustainability.
+          </p>
+
+          <div class="contact-note">
+            <p>
+              For academic discussions, research collaboration, or
+              opportunities related to my research interests, feel free
+              to contact me.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-links">
+
+          <a class="contact-link" href="mailto:ratulripon6@gmail.com">
+            <span class="contact-mark">@</span>
+            <span>
+              <strong>Email</strong>
+              ratulripon6@gmail.com
             </span>
+          </a>
 
+          <a
+            class="contact-link"
+            href="https://www.linkedin.com/in/ratul-ripon/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-mark">in</span>
+            <span>
+              <strong>LinkedIn</strong>
+              Connect professionally
+            </span>
+          </a>
 
-            <h2>
-                Let's connect.
-            </h2>
-
-        </div>
-
-
-        <div>
-
-            <p>
-
-                I'm open to conversations around
-                academic opportunities, research,
-                oceanography, data analysis and
-                environmental science.
-
-            </p>
-
-
-            <div class="contact-links">
-
-                <a href="mailto:ratulripon6@gmail.com">
-
-                    Email
-
-                    <span>↗</span>
-
-                </a>
-
-
-                <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                >
-
-                    LinkedIn
-
-                    <span>↗</span>
-
-                </a>
-
-
-                <a
-                    href="https://github.com/ratulripon"
-                    target="_blank"
-                >
-
-                    GitHub
-
-                    <span>↗</span>
-
-                </a>
-
-
-                <a
-                    href="assets/cv.pdf"
-                    download
-                >
-
-                    CV
-
-                    <span>↓</span>
-
-                </a>
-
-            </div>
+          <a
+            class="contact-link"
+            href="assets/cv.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="contact-mark">CV</span>
+            <span>
+              <strong>Curriculum Vitae</strong>
+              View or download my CV
+            </span>
+          </a>
 
         </div>
+      </div>
+    </section>
 
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p style="margin-bottom: 0;">
+        © <span id="currentYear">2026</span> MD Ratul Hasan Ripon.
+        Academic and research portfolio.
+      </p>
+
+      <div class="footer-links">
+        <a href="#home">Back to top ↑</a>
+        <a href="https://www.linkedin.com/in/ratul-ripon/" target="_blank" rel="noopener noreferrer">
+          LinkedIn ↗
+        </a>
+      </div>
     </div>
+  </footer>
 
-</section>
+  <script>
+    // Update the footer year automatically.
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
 
+    // Mobile navigation.
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-</main>
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "Close ✕" : "Menu ☰";
+    });
 
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer>
-
-    <div class="container footer">
-
-        <span>
-            MD. Ratul Hasan Ripon
-        </span>
-
-        <span>
-            Oceanography · GIS · Data Analysis
-        </span>
-
-        <span>
-            © 2026
-        </span>
-
-    </div>
-
-</footer>
-
+    // Close the mobile menu after a navigation link is selected.
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "Menu ☰";
+      });
+    });
+  </script>
 
 </body>
-
 </html>
