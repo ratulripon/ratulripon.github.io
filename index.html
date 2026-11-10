@@ -528,6 +528,7 @@
 
     .gallery-image {
       width: 100%;
+      height: auto;
       aspect-ratio: 16 / 10;
       object-fit: cover;
       background: var(--accent-light);
@@ -545,6 +546,20 @@
       color: var(--muted);
       font-size: 0.92rem;
       margin-bottom: 0;
+    }
+
+    .gallery-card .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .gallery-card .tag-list {
+      margin: 14px 0 16px;
+    }
+
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .image-note {
@@ -1109,6 +1124,7 @@
       <nav class="nav-links" id="navLinks" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
         <a href="#fieldwork">Fieldwork</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
@@ -1282,17 +1298,64 @@
               <span class="tag">Coastal Research</span>
             </div>
 
-           <p class="project-note">
-  Research period: January–October 2023.
-</p>
+            <p class="project-note">
+              Research period: January–October 2023.
+            </p>
           </div>
         </article>
       </div>
     </section>
 
-    
+    <!-- Mini projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Mini Projects</span>
+          <h2>Data projects with open code</h2>
+          <p>
+            Short, self-contained analyses using public ocean and satellite data.
+            Each one comes with its code, so the results can be checked and reproduced.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-card">
+            <a href="projects/bay-of-bengal-sst/">
+              <img
+                class="gallery-image"
+                src="projects/bay-of-bengal-sst/figures/thumbnail.webp"
+                alt="Warming stripes: one coloured stripe per year of Bay of Bengal sea surface temperature since 1982, from blue to red"
+                width="1200"
+                height="750"
+                loading="lazy"
+              >
+            </a>
+            <div class="gallery-content">
+              <span class="eyebrow">Ocean data analysis · Python</span>
+              <h3>How fast is the Bay of Bengal warming?</h3>
+              <p>
+                Four decades of NOAA satellite sea surface temperature, analysed for the
+                long-term warming rate, the season that warms fastest, and where in the
+                Bay the change is strongest.
+              </p>
+              <div class="tag-list">
+                <span class="tag">Python</span>
+                <span class="tag">xarray</span>
+                <span class="tag">Trend analysis</span>
+                <span class="tag">NOAA OISST</span>
+              </div>
+              <div class="card-links">
+                <a class="button button-small" href="projects/bay-of-bengal-sst/">View project ↗</a>
+                <a class="button button-outline button-small" href="https://github.com/ratulripon/bay-of-bengal-sst" target="_blank" rel="noopener">Code on GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
 <!-- Fieldwork, Analysis, and Academic Activities -->
-<section class="section" id="fieldwork">
+<section class="section section-white" id="fieldwork">
   <div class="container">
     <div class="section-heading">
       <span class="eyebrow">Research in Practice</span>
@@ -1362,7 +1425,7 @@
 
 
     <!-- Experience -->
-    <section class="section section-white" id="experience">
+    <section class="section" id="experience">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Professional Experience</span>
@@ -1423,7 +1486,7 @@
     </section>
 
     <!-- Education -->
-    <section class="section" id="education">
+    <section class="section section-white" id="education">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Education</span>
@@ -1471,7 +1534,7 @@
     </section>
 
     <!-- Technical skills -->
-    <section class="section section-white" id="skills">
+    <section class="section" id="skills">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Technical Skills</span>
@@ -1522,13 +1585,11 @@
           </article>
 
         </div>
-
-      
       </div>
     </section>
 
     <!-- Conferences -->
-    <section class="section" id="conferences">
+    <section class="section section-white" id="conferences">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Academic Engagement</span>
@@ -1589,7 +1650,7 @@
     </section>
 
     <!-- Leadership and languages -->
-    <section class="section section-white" id="activities">
+    <section class="section" id="activities">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Beyond Research</span>
@@ -1649,7 +1710,7 @@
     </section>
 
     <!-- References -->
-    <section class="section" id="references">
+    <section class="section section-white" id="references">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Academic References</span>

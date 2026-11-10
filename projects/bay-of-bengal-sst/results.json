@@ -1,0 +1,94 @@
+{
+  "title": "How fast is the Bay of Bengal warming?",
+  "region": {
+    "lat": [
+      5.0,
+      23.0
+    ],
+    "lon": [
+      80.0,
+      95.0
+    ]
+  },
+  "period": [
+    1982,
+    2025
+  ],
+  "n_years": 44,
+  "baseline": [
+    1991,
+    2020
+  ],
+  "mean_sst_c": 28.496,
+  "trend_annual": {
+    "sen_per_decade": 0.2019,
+    "sen_low": 0.153,
+    "sen_high": 0.2385,
+    "sen_intercept": -11.9829,
+    "ols_per_decade": 0.1883,
+    "ols_low": 0.1451,
+    "ols_high": 0.2314,
+    "ols_p": 0.0,
+    "r2": 0.6488,
+    "mk_tau": 0.6321,
+    "mk_p": 0.0,
+    "n": 44
+  },
+  "total_change_c": 0.868,
+  "warmest_years": {
+    "2024": 29.217,
+    "2016": 28.958,
+    "2025": 28.955,
+    "2021": 28.944,
+    "2020": 28.928
+  },
+  "season_trends": {
+    "Winter (Dec–Feb)": {
+      "sen_per_decade": 0.1831,
+      "sen_low": 0.1298,
+      "sen_high": 0.2461,
+      "mk_p": 0.0,
+      "n": 43
+    },
+    "Pre-monsoon (Mar–May)": {
+      "sen_per_decade": 0.1765,
+      "sen_low": 0.1215,
+      "sen_high": 0.2324,
+      "mk_p": 0.0,
+      "n": 44
+    },
+    "Monsoon (Jun–Sep)": {
+      "sen_per_decade": 0.2113,
+      "sen_low": 0.1448,
+      "sen_high": 0.2643,
+      "mk_p": 0.0,
+      "n": 44
+    },
+    "Post-monsoon (Oct–Nov)": {
+      "sen_per_decade": 0.1993,
+      "sen_low": 0.1467,
+      "sen_high": 0.2498,
+      "mk_p": 0.0,
+      "n": 44
+    }
+  },
+  "spatial": {
+    "min_trend": 0.076,
+    "max_trend": 0.257,
+    "significant_warming_area_pct": 100.0,
+    "north_of_15N": 0.195,
+    "south_of_15N": 0.185
+  },
+  "findings": [
+    "Between 1982 and 2025, the Bay of Bengal warmed at about +0.20 °C per decade (95% CI +0.15 to +0.24), a statistically significant trend (Mann–Kendall p < 0.001).",
+    "That adds up to roughly +0.87 °C over the 44-year record.",
+    "The warmest year was 2024 (29.22 °C basin average). All five of the warmest years fall in the last decade (2016–2025).",
+    "All four seasons warmed at similar rates, from +0.18 to +0.21 °C/decade. The differences between seasons are smaller than their uncertainty, so no season stands out.",
+    "Every ocean grid cell in the study area shows statistically significant warming. The average trend is +0.20 °C/decade north of 15°N and +0.19 °C/decade south of it."
+  ],
+  "data": {
+    "dataset": "NOAA OI SST V2 High Resolution, monthly mean",
+    "source": "https://psl.noaa.gov/thredds/dodsC/Datasets/noaa.oisst.v2.highres/sst.mon.mean.nc",
+    "accessed": "2026-11-10"
+  }
+}
