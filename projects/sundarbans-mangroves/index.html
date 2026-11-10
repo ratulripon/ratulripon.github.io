@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>How Has the Bangladesh Sundarbans Changed? | MD Ratul Hasan Ripon</title>
+  <meta name="description" content="Mapping the Bangladesh Sundarbans from Landsat with Random Forest classification, 1990–2024: 4,000 km² of mangrove in 2024, net change -147 km² (-3.5%).">
+  <meta name="author" content="MD Ratul Hasan Ripon">
+  <meta name="theme-color" content="#123B3A">
+
+  <meta property="og:title" content="How has the Bangladesh Sundarbans changed since 1990?">
+  <meta property="og:description" content="Landsat + Random Forest mapping of the world's largest mangrove forest, 1990–2024.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ratulripon.github.io/projects/sundarbans-mangroves/">
+  <meta property="og:image" content="https://ratulripon.github.io/projects/sundarbans-mangroves/figures/social-preview.png">
+  <link rel="canonical" href="https://ratulripon.github.io/projects/sundarbans-mangroves/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #123B3A;
+      --accent: #287C72;
+      --accent-dark: #1D655C;
+      --accent-light: #DDECE4;
+      --background: #F7F8F2;
+      --surface: #FFFFFF;
+      --text: #263A36;
+      --muted: #687B74;
+      --border: #DCE5DF;
+      --earth: #C69B5B;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      color: var(--primary);
+      line-height: 1.25;
+    }
+
+    h1 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); letter-spacing: -0.045em; margin-bottom: 18px; }
+    h2 { font-size: clamp(1.5rem, 2.6vw, 1.95rem); letter-spacing: -0.03em; margin-bottom: 16px; }
+    h3 { font-size: 1.05rem; margin: 22px 0 8px; }
+    p { margin-bottom: 14px; }
+    a { color: var(--accent-dark); }
+    a:hover { color: var(--primary); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .wrap { width: min(860px, calc(100% - 32px)); margin: 0 auto; }
+
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(247, 248, 242, 0.94);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      min-height: 64px;
+    }
+
+    .brand { font-family: "Manrope", sans-serif; font-weight: 800; color: var(--primary); text-decoration: none; }
+    .brand span { color: var(--accent); }
+    .back { font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent-dark);
+      font-size: 0.77rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    header.intro { padding: 64px 0 28px; }
+    .lede { font-size: 1.1rem; color: var(--muted); max-width: 700px; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 9px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .button:hover { background: var(--accent-dark); color: #fff; }
+    .button.outline { background: transparent; color: var(--primary); border-color: var(--border); }
+    .button.outline:hover { background: var(--accent-light); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .tag {
+      padding: 4px 10px;
+      background: var(--accent-light);
+      color: var(--primary);
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 12px 0 8px;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .stat .value {
+      font-family: "Manrope", sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .stat .unit { font-size: 1rem; font-weight: 700; color: var(--accent-dark); }
+    .stat .label { font-weight: 600; margin-top: 6px; }
+    .stat .note { font-size: 0.83rem; color: var(--muted); line-height: 1.5; margin-top: 4px; }
+
+    section { padding: 44px 0; border-top: 1px solid var(--border); }
+    section:first-of-type { border-top: 0; }
+
+    .findings { padding-left: 20px; }
+    .findings li { margin-bottom: 10px; }
+
+    .figure {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin: 24px 0;
+    }
+
+    .figure img { margin: 0 auto; border-radius: 8px; }
+    .narrow .figure img { max-width: 560px; width: 100%; }
+    figcaption { font-size: 0.87rem; color: var(--muted); margin-top: 12px; line-height: 1.6; }
+
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; background: var(--surface); }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+    th { color: var(--muted); font-weight: 600; font-size: 0.82rem; white-space: normal; vertical-align: bottom; }
+    td { font-variant-numeric: tabular-nums; }
+
+    .method-list { padding-left: 20px; }
+    .method-list li { margin-bottom: 8px; }
+
+    .refs { font-size: 0.88rem; color: var(--muted); padding-left: 20px; }
+    .refs li { margin-bottom: 8px; }
+
+    footer {
+      background: var(--primary);
+      color: #D4E4DC;
+      padding: 28px 0;
+      font-size: 0.88rem;
+      margin-top: 30px;
+    }
+
+    footer a { color: #fff; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media (max-width: 860px) {
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 680px) {
+      header.intro { padding-top: 40px; }
+      .stats { grid-template-columns: 1fr; }
+      .figure { padding: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/">Ratul<span>.</span></a>
+      <a class="back" href="/#projects">← All projects</a>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <header class="intro">
+      <span class="eyebrow">Mini project · Remote sensing</span>
+      <h1>How has the Bangladesh Sundarbans changed since 1990?</h1>
+      <p class="lede">
+        I mapped the Bangladesh part of the world's largest mangrove forest from Landsat satellite
+        images for five years between 1990 and 2024, to measure how much mangrove there is,
+        where it has been lost or gained, and how reliable the mapping is.
+      </p>
+
+      <div class="actions">
+        <a class="button" href="https://github.com/ratulripon/sundarbans-mangrove-change" target="_blank" rel="noopener">Code on GitHub ↗</a>
+        <a class="button outline" href="https://colab.research.google.com/github/ratulripon/sundarbans-mangrove-change/blob/main/sundarbans_mangrove_change.ipynb" target="_blank" rel="noopener">Run it in Colab ↗</a>
+        <a class="button outline" href="data/sundarbans_mangrove_area.csv" download>Download results (CSV)</a>
+      </div>
+
+      <div class="tags">
+        <span class="tag">Google Earth Engine</span>
+        <span class="tag">Python</span>
+        <span class="tag">Landsat</span>
+        <span class="tag">Random Forest</span>
+        <span class="tag">Accuracy assessment</span>
+        <span class="tag">Change detection</span>
+      </div>
+    </header>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="value">4,000 <span class="unit">km²</span></div>
+        <div class="label">mangrove in 2024</div>
+        <div class="note">Within a 10,535 km² study area</div>
+      </div>
+      <div class="stat">
+        <div class="value">-147 <span class="unit">km²</span></div>
+        <div class="label">net change since 1990</div>
+        <div class="note">-3.5%, but similar to the 136 km² gap between methods</div>
+      </div>
+      <div class="stat">
+        <div class="value">271 <span class="unit">km²</span></div>
+        <div class="label">gross loss</div>
+        <div class="note">Offset by 124 km² of gain</div>
+      </div>
+      <div class="stat">
+        <div class="value">98.0–99.6%</div>
+        <div class="label">mapping accuracy</div>
+        <div class="note">On held-out reference samples (optimistic)</div>
+      </div>
+    </div>
+
+    <figure class="figure"><img src="figures/mangrove_change_map.webp" alt="Map of the Bangladesh Sundarbans showing stable mangrove, mangrove loss and gain between 1990 and 2024" width="1332" height="1419" loading="lazy"><figcaption>Green: mangrove in both 1990 and 2024. Pink: mangrove in 1990 but not 2024 (loss). Blue: mangrove in 2024 but not 1990 (gain). The dark outline is the study area.</figcaption></figure>
+
+    <section>
+      <h2>Study area</h2>
+      <p>
+        The Sundarbans covers about 10,000 km² of the Ganges–Brahmaputra delta, shared between Bangladesh
+        and India, with roughly 60% in Bangladesh. The Bangladesh part is a UNESCO World Heritage Site and a
+        Ramsar wetland of international importance. I studied the Bangladesh side, in Satkhira, Khulna and
+        Bagerhat districts, with a 10 km margin along the coast so that the seaward edge of the forest is included.
+      </p>
+      <figure class="figure"><img src="figures/study_area.webp" alt="Study area map of the Bangladesh Sundarbans on a Landsat satellite image, with district boundaries, a north arrow, scale bar, legend and two locator maps showing Bangladesh in South Asia" width="1600" height="1131" loading="lazy"><figcaption>Study area: the Bangladesh Sundarbans (yellow outline, 10,535 km²), on a dry-season Landsat true-colour composite. Insets show its location in Bangladesh and South Asia.</figcaption></figure>
+    </section>
+
+    <section>
+      <h2>Key findings</h2>
+      <ul class="findings">
+        <li>Mangrove covered about 4,000 km² of the study area in 2024, compared with 4,147 km² in 1990.</li>
+<li>That is a net change of -147 km² (-3.5%). But my maps differ from Global Mangrove Watch by up to 136 km² (in 2000), which is about as large as the change itself, so the size of the change is uncertain. Global Mangrove Watch shows -55 km² (-1.4%) between 1996 and 2020. Both datasets agree on the direction: a slight decline rather than large-scale loss.</li>
+<li>Behind the net figure, 271 km² that was mangrove in 1990 was not mangrove in 2024, and 124 km² went the other way. Some of this is real change (erosion and new land along rivers and the coast) and some is classification noise, so the gross figures are upper estimates.</li>
+<li>Compared with Global Mangrove Watch for the same area, my estimates differ by 2000*: +136 km² (+3.4%), 2010: -24 km² (-0.6%), 2020: -19 km² (-0.5%) (* compared with Global Mangrove Watch interpolated between its nearest years). They agree most closely in 2020 and least in 2000.</li>
+<li>The classifier matched held-out reference samples 98.0–99.6% of the time (kappa 0.97–0.99). Those samples come from areas that never changed, so real accuracy is lower, especially along forest edges and riverbanks.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Has the total area changed?</h2>
+      <p>
+        I compared my estimates with Global Mangrove Watch, an independent global dataset made with
+        different satellites and methods, for exactly the same study area. Where the two agree, the
+        mapping is more believable. Where they differ, the gap shows how uncertain any single map is.
+      </p>
+      <figure class="figure"><img src="figures/mangrove_area_trend.webp" alt="Line chart of mangrove area by year from this study compared with Global Mangrove Watch" width="1581" height="790" loading="lazy"><figcaption>Mangrove area mapped in this study (teal) and by Global Mangrove Watch v3 (dashed) for the same study area. The vertical axis does not start at zero, so small differences look larger than they are.</figcaption></figure>
+      <figure class="figure"><img src="figures/mangrove_loss_gain.webp" alt="Bar chart of mangrove gain and loss for each period between the five snapshots" width="1573" height="759" loading="lazy"><figcaption>Gain above the line, loss below it, and the net change as a dot. Part of each bar is classification noise rather than real change, so gross figures are upper estimates.</figcaption></figure>
+    </section>
+
+    <section>
+      <h2>Land cover maps</h2>
+      <figure class="figure"><img src="figures/mangrove_classes.webp" alt="Two land cover maps of the Bangladesh Sundarbans, 1990 and 2024, showing mangrove, water and other land" width="1600" height="1047" loading="lazy"><figcaption>Random Forest classification of the 1990 and 2024 dry-season Landsat composites.</figcaption></figure>
+    </section>
+
+    <section>
+      <h2>How reliable is the mapping?</h2>
+      <p>
+        Each year has its own classifier, tested on reference samples it did not see during training.
+        Producer's accuracy is the share of real mangrove the map found; user's accuracy is the share of
+        mapped mangrove that really is mangrove.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Year</th><th>Images from</th><th>Images</th><th>Cloud-free cover</th>
+                <th>Overall accuracy</th><th>Kappa</th><th>Mangrove producer's / user's</th><th>Mangrove (km²)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1990</td><td>Nov 1989 – Mar 1991</td><td>44</td><td>100.0%</td><td>99.6%</td><td>0.99</td><td>99.7% / 99.4%</td><td>4,147</td></tr>
+<tr><td>2000</td><td>Nov 1999 – Mar 2001</td><td>70</td><td>100.0%</td><td>99.0%</td><td>0.99</td><td>99.0% / 98.4%</td><td>4,171</td></tr>
+<tr><td>2010</td><td>Nov 2009 – Mar 2011</td><td>108</td><td>100.0%</td><td>98.0%</td><td>0.97</td><td>98.6% / 95.6%</td><td>3,994</td></tr>
+<tr><td>2020</td><td>Nov 2019 – Mar 2021</td><td>67</td><td>100.0%</td><td>98.4%</td><td>0.98</td><td>98.4% / 97.1%</td><td>3,958</td></tr>
+<tr><td>2024</td><td>Nov 2023 – Mar 2025</td><td>135</td><td>100.0%</td><td>98.2%</td><td>0.97</td><td>97.9% / 96.9%</td><td>4,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data and methods</h2>
+      <ul class="method-list">
+        <li><strong>Imagery:</strong> Landsat 5, 7, 8 and 9 Collection 2 surface reflectance, dry season (November–March) only.
+          Clouds and shadows removed with the quality band. Landsat 7 is used only before 2013, because its images
+          have stripes after a 2003 scan-line fault and Landsat 8 is available from 2013.</li>
+        <li><strong>Composites:</strong> median of all clear observations in a window around each year, widened automatically if clouds left gaps.</li>
+        <li><strong>Features:</strong> six reflectance bands plus NDVI, NDWI, MNDWI and the Mangrove Vegetation Index.</li>
+        <li><strong>Reference samples:</strong> 1000 per class (mangrove, water, other land), drawn from areas that never changed
+          in Global Mangrove Watch (1996–2020) and the JRC Global Surface Water dataset, away from class edges.</li>
+        <li><strong>Classifier:</strong> Random Forest with 100 trees, 70% of samples for training and 30% for testing,
+          followed by a 3 × 3 majority filter.</li>
+        <li><strong>Change:</strong> pixel-by-pixel comparison of the mangrove class between snapshots, with true pixel areas.</li>
+        <li><strong>Processing:</strong> Google Earth Engine through its Python API. Accessed 2026-11-10.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Limitations</h2>
+      <ul class="method-list">
+        <li>The reference samples come from areas that never changed, so the accuracy figures are optimistic.
+          There was no field data for each year.</li>
+        <li>The Sundarbans is tidal. Some change along creeks and mudflats is just the tide on different days.</li>
+        <li>Earlier years use Landsat 5 and 7, later years Landsat 8 and 9. Each year has its own classifier, but small
+          sensor differences remain.</li>
+        <li>The maps show extent, not health. "Top dying" of Sundri trees and rising salinity happen inside the forest
+          without changing its outline.</li>
+        <li>The border with India follows the FAO GAUL boundary, which is approximate along the rivers.</li>
+      </ul>
+
+      <h3>What I would do next</h3>
+      <ul class="method-list">
+        <li>Check the maps against high-resolution images in Google Earth Pro at random points, for an independent accuracy estimate.</li>
+        <li>Separate erosion on the seaward edge from changes inside the forest.</li>
+        <li>Track forest health inside the stable mangrove with an NDVI trend alongside salinity data.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data credit and references</h2>
+      <ul class="refs">
+        <li>Landsat Collection 2 Level-2 surface reflectance, courtesy of the U.S. Geological Survey.</li>
+        <li>Bunting, P., Rosenqvist, A., Hilarides, L., et al. (2022). Global Mangrove Extent Change 1996–2020:
+          Global Mangrove Watch Version 3.0. <em>Remote Sensing</em>, 14, 3657. Data licensed CC BY 4.0.</li>
+        <li>Pekel, J.-F., Cottam, A., Gorelick, N., &amp; Belward, A. S. (2016). High-resolution mapping of global
+          surface water and its long-term changes. <em>Nature</em>, 540, 418–422.</li>
+        <li>Baloloy, A. B., Blanco, A. C., Ana, R. R. C. S., &amp; Nadaoka, K. (2020). Development and application of a
+          new mangrove vegetation index (MVI) for rapid and accurate mangrove mapping. <em>ISPRS Journal of
+          Photogrammetry and Remote Sensing</em>, 166, 95–117.</li>
+        <li>Breiman, L. (2001). Random forests. <em>Machine Learning</em>, 45, 5–32.</li>
+        <li>Gorelick, N., et al. (2017). Google Earth Engine: Planetary-scale geospatial analysis for everyone.
+          <em>Remote Sensing of Environment</em>, 202, 18–27.</li>
+        <li>Country boundaries: FAO Global Administrative Unit Layers (GAUL) 2015.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© MD Ratul Hasan Ripon · Oceanography &amp; environmental research</span>
+      <a href="/">Back to portfolio ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

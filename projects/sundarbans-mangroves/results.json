@@ -1,0 +1,228 @@
+{
+  "title": "How has the Bangladesh Sundarbans changed since 1990?",
+  "epochs": [
+    1990,
+    2000,
+    2010,
+    2020,
+    2024
+  ],
+  "gmw_years": [
+    1996,
+    2007,
+    2008,
+    2009,
+    2010,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020
+  ],
+  "aoi_km2": 10535.263740986751,
+  "areas": {
+    "gain_1990_2000": 135.34246582245393,
+    "gain_2000_2010": 50.67950088479191,
+    "gain_2010_2020": 67.88095587955505,
+    "gain_2020_2024": 94.90300725828492,
+    "gain_total": 124.23924897884764,
+    "gmw_1996": 4031.6047348711077,
+    "gmw_2007": 4039.0667773892897,
+    "gmw_2008": 4034.9804150914842,
+    "gmw_2009": 4031.5361896864197,
+    "gmw_2010": 4018.402098006944,
+    "gmw_2015": 3990.4240633979393,
+    "gmw_2016": 3978.918238732159,
+    "gmw_2017": 3979.063720737626,
+    "gmw_2018": 3984.874281649331,
+    "gmw_2019": 3982.877962605269,
+    "gmw_2020": 3977.0308846799185,
+    "loss_1990_2000": 111.9132231341191,
+    "loss_2000_2010": 226.85011990707915,
+    "loss_2010_2020": 104.20817066727517,
+    "loss_2020_2024": 52.661884179758815,
+    "loss_total": 271.06671702199407,
+    "mangrove_1990": 4147.215723975417,
+    "mangrove_2000": 4170.64496666375,
+    "mangrove_2010": 3994.474347641465,
+    "mangrove_2020": 3958.1471328537446,
+    "mangrove_2024": 4000.388255932271,
+    "stable_total": 3876.149006953423,
+    "water_1990": 3179.6791962873117,
+    "water_2000": 3454.593355402277,
+    "water_2010": 3796.460202544272,
+    "water_2020": 3479.734611953702,
+    "water_2024": 3536.419297102064
+  },
+  "accuracy": {
+    "1990": {
+      "overall": 0.9956331877729258,
+      "kappa": 0.9934473841399515,
+      "mangrove_producers": 0.9968051118210862,
+      "mangrove_users": 0.9936305732484076,
+      "matrix": [
+        [
+          312,
+          0,
+          1
+        ],
+        [
+          0,
+          308,
+          1
+        ],
+        [
+          2,
+          0,
+          292
+        ]
+      ],
+      "n_test": 916,
+      "n_train": 2084
+    },
+    "2000": {
+      "overall": 0.9900552486187846,
+      "kappa": 0.9850791929391335,
+      "mangrove_producers": 0.9900990099009901,
+      "mangrove_users": 0.9836065573770492,
+      "matrix": [
+        [
+          300,
+          0,
+          3
+        ],
+        [
+          0,
+          308,
+          1
+        ],
+        [
+          5,
+          0,
+          288
+        ]
+      ],
+      "n_test": 905,
+      "n_train": 2095
+    },
+    "2010": {
+      "overall": 0.9795221843003413,
+      "kappa": 0.9692845286974755,
+      "mangrove_producers": 0.9861111111111112,
+      "mangrove_users": 0.9562289562289562,
+      "matrix": [
+        [
+          284,
+          0,
+          4
+        ],
+        [
+          0,
+          290,
+          1
+        ],
+        [
+          13,
+          0,
+          287
+        ]
+      ],
+      "n_test": 879,
+      "n_train": 2121
+    },
+    "2020": {
+      "overall": 0.9843924191750278,
+      "kappa": 0.9765785861358957,
+      "mangrove_producers": 0.9838187702265372,
+      "mangrove_users": 0.9712460063897763,
+      "matrix": [
+        [
+          304,
+          1,
+          4
+        ],
+        [
+          0,
+          289,
+          0
+        ],
+        [
+          9,
+          0,
+          290
+        ]
+      ],
+      "n_test": 897,
+      "n_train": 2103
+    },
+    "2024": {
+      "overall": 0.981941309255079,
+      "kappa": 0.972894733823074,
+      "mangrove_producers": 0.979381443298969,
+      "mangrove_users": 0.9693877551020408,
+      "matrix": [
+        [
+          285,
+          1,
+          5
+        ],
+        [
+          0,
+          283,
+          1
+        ],
+        [
+          9,
+          0,
+          302
+        ]
+      ],
+      "n_test": 886,
+      "n_train": 2114
+    }
+  },
+  "epoch_info": {
+    "1990": {
+      "window": "Nov 1989 – Mar 1991",
+      "images": 44,
+      "coverage": 1
+    },
+    "2000": {
+      "window": "Nov 1999 – Mar 2001",
+      "images": 70,
+      "coverage": 1
+    },
+    "2010": {
+      "window": "Nov 2009 – Mar 2011",
+      "images": 108,
+      "coverage": 1
+    },
+    "2020": {
+      "window": "Nov 2019 – Mar 2021",
+      "images": 67,
+      "coverage": 1
+    },
+    "2024": {
+      "window": "Nov 2023 – Mar 2025",
+      "images": 135,
+      "coverage": 1
+    }
+  },
+  "bounds": [
+    88.95,
+    21.55,
+    89.98,
+    22.6
+  ],
+  "accessed": "2026-11-10",
+  "net_change_km2": -146.83,
+  "net_change_pct": -3.54,
+  "findings": [
+    "Mangrove covered about 4,000 km² of the study area in 2024, compared with 4,147 km² in 1990.",
+    "That is a net change of -147 km² (-3.5%). But my maps differ from Global Mangrove Watch by up to 136 km² (in 2000), which is about as large as the change itself, so the size of the change is uncertain. Global Mangrove Watch shows -55 km² (-1.4%) between 1996 and 2020. Both datasets agree on the direction: a slight decline rather than large-scale loss.",
+    "Behind the net figure, 271 km² that was mangrove in 1990 was not mangrove in 2024, and 124 km² went the other way. Some of this is real change (erosion and new land along rivers and the coast) and some is classification noise, so the gross figures are upper estimates.",
+    "Compared with Global Mangrove Watch for the same area, my estimates differ by 2000*: +136 km² (+3.4%), 2010: -24 km² (-0.6%), 2020: -19 km² (-0.5%) (* compared with Global Mangrove Watch interpolated between its nearest years). They agree most closely in 2020 and least in 2000.",
+    "The classifier matched held-out reference samples 98.0–99.6% of the time (kappa 0.97–0.99). Those samples come from areas that never changed, so real accuracy is lower, especially along forest edges and riverbanks."
+  ]
+}
